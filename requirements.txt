@@ -1,0 +1,31 @@
+# Data and EDA
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+
+# Text preprocessing
+nltk
+spacy
+
+# LLMs and Embeddings
+openai
+sentence-transformers
+
+# Vector Database
+faiss-cpu     # for FAISS (CPU version)
+# chromadb    # optional alternative to FAISS
+
+# Backend and API (Optional)
+fastapi
+uvicorn
+
+# UI (Optional)
+streamlit
+
+# Dotenv for secrets
+python-dotenv
+
+# Jupyter (Optional for notebooks)
+notebook
