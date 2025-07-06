@@ -1,8 +1,49 @@
-# chatbot-finance
-📊 Exploratory Data Analysis Summary
-We began with over 9.6 million complaint records from the CFPB dataset. However, only about 31% of complaints included a narrative, which is essential for language-based analysis. After filtering to include only relevant product categories — Credit Cards, Savings Accounts, and Money Transfers — and removing empty or non-informative entries, we were left with 318,000+ clean narratives.
+# CrediTrust RAG-Powered Chatbot
 
-Analysis of narrative length revealed that while the average word count was moderate, there is a significant number of extremely short complaints (under 10 words), which may not be useful for deep semantic understanding. A small percentage also had very long and detailed complaints (over 250 words), providing rich context for embedding-based retrieval.
+## Project Overview
 
-These cleaned and filtered narratives form the basis for the next step in our pipeline: generating embeddings and building the Retrieval-Augmented Generation (RAG) system to support internal teams in understanding key user pain points.
+CrediTrust faced challenges with efficiently handling customer queries and internal data retrieval related to credit scoring and fraud detection. This project implements a Retrieval-Augmented Generation (RAG) chatbot solution to enhance query accuracy by combining document retrieval with large language model (LLM) generation.
+
+The chatbot integrates:
+
+- **Exploratory Data Analysis (EDA)** and preprocessing of internal datasets to ensure clean and relevant information.
+- **Text chunking and embedding** using sentence transformers (`all-MiniLM-L6-v2`) to convert documents into vector representations.
+- **FAISS index** for efficient similarity search of relevant document chunks.
+- A **RAG pipeline** that retrieves top relevant chunks based on user queries, combines them with a prompt template, and uses an LLM (via Hugging Face Inference API) to generate accurate answers.
+- An interactive **Gradio UI** for end-user testing and demonstrations.
+
+## Key Components
+
+1. **Data Preprocessing & EDA**  
+   - Data cleaning and filtering to remove noise and irrelevant information.  
+   - Insights from exploratory analysis to guide chunking and embedding strategies.
+
+2. **Chunking and Embedding**  
+   - Texts split into manageable chunks preserving context.  
+   - Embeddings created using `all-MiniLM-L6-v2` transformer for semantic similarity.
+
+3. **Retrieval and Generation**  
+   - FAISS index built over embeddings for fast similarity retrieval.  
+   - Custom prompt template merges query with top chunks to guide LLM responses.
+
+4. **Evaluation**  
+   - Qualitative assessment with sample questions, scoring answer quality and source relevance.  
+   - Identified strengths and areas for improvement to guide future iterations.
+
+## How to Use
+
+- Clone the repo and install dependencies.
+- Set your Hugging Face API token as an environment variable (`HF_API_TOKEN`).
+- Run the scripts to build the FAISS index and start the chatbot UI.
+- Test sample queries to see the RAG pipeline in action.
+
+## Future Improvements
+
+- Enhance chunking strategies to improve context retention.
+- Experiment with larger or domain-specific LLM models.
+- Automate evaluation with a larger dataset and metrics.
+
+---
+
+For detailed implementation, evaluation tables, and discussion, refer to the full project report.
 
