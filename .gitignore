@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# Jupyter notebooks (optional)
+# *.ipynb
+
+# Python cache
+__pycache__/
+
+# Data
+data/
+
+# Environment variables
+.env
+
+# Model files and outputs
+*.csv
+*.xlsx
+*.pkl
+*.pt
+*.model
+*.bin
